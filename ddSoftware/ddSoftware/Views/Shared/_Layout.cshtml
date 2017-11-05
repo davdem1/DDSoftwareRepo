@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+
+<html style="background: url('../../Content/Images/NB-Dp4Apps-background[1].jpg') no-repeat; background-size: cover;">
+
+<head>
+
+    <meta name="msvalidate.01" content="0BE7774511438947840FE8A95441AA0C"/>
+    <meta name="google-site-verification" content="_a_Iq8oOWv3wbuPwBXhDL5xoSRfERtvry_pHuWkBmz8"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - DD Software</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style type="text/css">
+        .navbar-inverse .navbar-brand {
+            color: black;
+            font-family: sans-serif;
+        }
+        .navbar-inverse .navbar-nav > li > a:hover,
+        .navbar-inverse .navbar-nav > li > a:focus {
+            color: darkblue;
+            background-color: white;
+        }
+        .navbar-inverse .navbar-brand:hover,
+        .navbar-inverse .navbar-brand:focus {
+            color: black;
+            background-color: white;
+        }
+        .navbar-inverse .navbar-nav > li > a {
+            color: darkblue;
+        }
+        .navbar-inverse .navbar-nav > .active > a,
+        .navbar-inverse .navbar-nav > .active > a:hover,
+        .navbar-inverse .navbar-nav > .active > a:focus {
+            color: black;
+            background-color: lightgreen;
+            text-underline: black;
+        }
+        .navbar-inverse {
+            background: linear-gradient(100deg, rgba(173, 216, 230, .9), rgba(100, 149, 237, 1));
+            border-color: black;
+        }
+
+        .nav .nav-tabs > a:focus {
+            /*background:linear-gradient(100deg, rgba(173, 216, 230,.9), rgba(100, 149, 237,1));*/
+            background-color: blue;
+        }
+
+        body {
+            background: url('../../Content/Images/NB-Dp4Apps-background[1].jpg') no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("DD Software:", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Services", "Services", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container body-content" style="background-color: transparent">
+    @RenderBody()
+    <hr/>
+</div>
+
+<div id="Footer">
+    <footer style="text-align: center">
+        <p>
+            &copy; @DateTime.Now.Year - DD Software -
+            <a href="@Url.Action("PrivacyStatement", "PrivacyStatement")" class="elements"><b>Privacy Statement</b></a>
+        </p>
+    </footer>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+
+</body>
+
+</html>
